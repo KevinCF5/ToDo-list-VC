@@ -1,4 +1,4 @@
-html {
+* {
   font-family: "Inter", Helvetica, sans-serif;
   font-size: 62.5%;
 }
@@ -9,18 +9,20 @@ body {
   font-size: 1.4rem;
 }
 
+.container {
+  width: 100%;
+  max-width: 736px;
+  margin: 0 auto;
+}
+
 .section-header header {
   text-align: center;
 }
 
 .section-header header h1 {
   font-size: 4rem;
-}
-
-.container {
-  width: 100%;
-  max-width: 736px;
-  margin: 0 auto;
+  color: #ffffff;
+  font-weight: 800;
 }
 
 .section-add-task .form-container {
@@ -32,8 +34,32 @@ body {
 
 .section-add-task .form-container input {
   width: 90%;
+  height: calc(54px - 20px);
+  background-color: #262626;
+  border-radius: 8px;
+  border: none;
+  padding: 10px;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #8c8c8c;
+  outline: none;
 }
 
 .section-add-task .form-container button {
   width: 10%;
+  min-width: 90px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  height: 54px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.section-add-task .form-container button span {
+  font-size: 1.4rem;
+  font-weight: 700;
 }
