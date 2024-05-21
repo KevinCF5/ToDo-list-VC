@@ -1,5 +1,8 @@
 * {
   font-family: "Inter", Helvetica, sans-serif;
+}
+
+html {
   font-size: 62.5%;
 }
 
@@ -15,6 +18,8 @@ body {
   margin: 0 auto;
 }
 
+/* HEADER SECTION STYLING */
+
 .section-header header {
   text-align: center;
 }
@@ -24,6 +29,8 @@ body {
   color: #ffffff;
   font-weight: 800;
 }
+
+/* TASK INPUT SECTION STYLING */
 
 .section-add-task .form-container {
   display: flex;
@@ -62,4 +69,58 @@ body {
 .section-add-task .form-container button span {
   font-size: 1.4rem;
   font-weight: 700;
+}
+
+/* TASK DETAILS SECTION STYLING */
+
+.tasks-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.tasks-details .column p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #7b7b7b;
+}
+
+.tasks-details .column.right p {
+  color: #69d436;
+}
+
+.counterBadge {
+  background-color: #262626;
+  padding: 2px 8px;
+  border-radius: 100px;
+  color: #d9d9d9;
+  margin-left: 5px;
+  font-size: 1.2rem;
+}
+
+.tasks-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tasks-container .task-item {
+  background-color: #262626;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.tasks-container .task-item p {
+  margin: 0;
+  line-height: 140%;
+  font-size: 1.4rem;
+}
+
+.tasks-container .task-item button {
+  background-color: transparent;
+  border: 0;
 }
