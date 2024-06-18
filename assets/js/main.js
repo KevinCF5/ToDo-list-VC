@@ -51,6 +51,36 @@ const handleCompleteTask = (taskIndex) => {
   handleUpdateTaskBadges();
 };
 
+const handleRemoveTask = (taskIndex) => {
+  const taskElement = document.querySelector(`#task-item-${taskIndex}`);
+
+  if (!taskElement) {
+    return;
+  }
+
+  taskElement.remove();
+
+  const getLocalStorageTasks = window.localStorage.getItem("tasks");
+
+  if (!getLocalStorageTasks) {
+    return;
+  }
+
+  const parsedLocalStorageTasks = JSON.parse(getLocalStorageTasks);
+
+  console.log("parsedLocalStorageTasks", parsedLocalStorageTasks);
+
+  parsedLocalStorageTasks.splice(taskIndex, 1);
+
+  console.log("parsedLocalStorageTasks", parsedLocalStorageTasks);
+
+  window.localStorage.setItem("tasks", JSON.stringify(parsedLocalStorageTasks));
+
+  tasks = parsedLocalStorageTasks;
+
+  handleUpdateTaskBadges();
+};
+
 const handleTasks = () => {
   const form = document.querySelector("#formElement");
   const tasksContainer = document.querySelector("#tasksContainer");
@@ -105,7 +135,7 @@ const handleTasks = () => {
       <img class="completed-icon" src="assets/media/checked.svg" />
     </button>
     <p>${task.message}</p>
-    <button>
+    <button onclick="handleRemoveTask(${taskIndex})">
       <img src="assets/media/trash.svg" />
     </button>
   </li>`
@@ -141,7 +171,7 @@ const handleTasks = () => {
       <img class="completed-icon" src="assets/media/checked.svg" />
       </button>
       <p>${inputValue}</p>
-      <button>
+      <button onClick="handleRemoveTask("${tasks.length - 1}")">
         <img src="assets/media/trash.svg" />
       </button>
     </li>`
