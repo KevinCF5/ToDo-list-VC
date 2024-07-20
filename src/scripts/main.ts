@@ -80,11 +80,7 @@ class Tasks extends HTMLElement {
     }
     const parsedLsTasks = JSON.parse(getLocalStorageTasks);
 
-    console.log("parsedTasks", parsedLsTasks);
-
     this.tasks = parsedLsTasks;
-
-    console.log("tasks ahah", this.tasks);
   }
 
   handleUpdateTaskBadges() {
@@ -131,8 +127,6 @@ class Tasks extends HTMLElement {
       completed: false,
     };
 
-    console.log("tasks ahahah", this.tasks);
-
     //add in memory
     this.tasks.push(newTaskObj);
 
@@ -174,7 +168,6 @@ class Tasks extends HTMLElement {
   }
 
   handleCompleteTask(taskId: string) {
-    console.log(`completed task ${taskId}`);
     const getMemoryTask = this.tasks.find((task) => task.id === taskId);
     const taskElement = document.querySelector(`#task-item-${taskId}`);
 
@@ -211,7 +204,6 @@ class Tasks extends HTMLElement {
   }
 
   handleRemoveTask(taskId: string) {
-    console.log("taskIndex", taskId);
     const taskElement = document.querySelector(`#task-item-${taskId}`);
 
     if (!taskElement) {
